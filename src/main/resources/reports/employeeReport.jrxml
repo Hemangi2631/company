@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports
-    http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+                                  http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
               name="employeeReport" pageWidth="595" pageHeight="842" columnWidth="555"
               leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20"
               uuid="1a347f55-02f7-4c8a-b4b9-4b2b7b72a2f8">
@@ -10,19 +10,10 @@
     <!-- Query for fetching data -->
     <queryString>
         <![CDATA[
-            SELECT
-                e.department_id,
-                e.id,
-                e.name AS name,
-                e.email AS email,
-                e.position AS position,
-                e.salary AS salary
-            FROM
-                employee e
-            JOIN
-                department d ON e.department_id = d.id
-            ORDER BY
-                d.name, e.name
+            SELECT e.department_id, e.id, e.name, e.email, e.position, e.salary
+            FROM employee e
+            JOIN department d ON e.department_id = d.id
+            ORDER BY d.name, e.name
         ]]>
     </queryString>
 
@@ -35,14 +26,14 @@
     <field name="salary" class="java.lang.String"/>
 
     <!-- Department group definition -->
-    <group name="departmentGroup">
+    <group name="departmentGroup" isStartNewPage="true">
         <groupExpression><![CDATA[$F{departmentId}]]></groupExpression>
         <groupHeader>
-            <band height="20">
+            <band height="40" splitType="Prevent">
                 <textField>
-                    <reportElement x="0" y="0" width="555" height="20"/>
+                    <reportElement x="0" y="0" width="555" height="30"/>
                     <textElement>
-                        <font size="14" isBold="true"/>
+                        <font size="16" isBold="true"/>
                     </textElement>
                     <textFieldExpression><![CDATA[$F{departmentId}]]></textFieldExpression>
                 </textField>
@@ -70,7 +61,7 @@
     <pageHeader>
         <band height="20">
             <line>
-                <reportElement x="0" y="19" width="555" height="1"/>
+                <reportElement x="0" y="0" width="555" height="1"/>
             </line>
         </band>
     </pageHeader>
