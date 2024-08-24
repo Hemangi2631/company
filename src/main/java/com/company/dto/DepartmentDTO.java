@@ -5,14 +5,12 @@ public class DepartmentDTO {
     private String name;
     private String location;
 
-    // Constructor
     public DepartmentDTO(String id, String name, String location) {
         this.id = id;
         this.name = name;
         this.location = location;
     }
 
-    // Getters and Setters
     public String getId() {
         return id;
     }

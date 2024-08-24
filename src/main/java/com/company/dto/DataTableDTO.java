@@ -2,8 +2,6 @@ package com.company.dto;
 
 import lombok.Data;
 
-import javax.persistence.Id;
-
 @Data
 public class DataTableDTO {
     private String id;

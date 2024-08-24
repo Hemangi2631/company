@@ -2,7 +2,6 @@ package com.company.transformer;
 
 import com.company.dto.DataTableDTO;
 import com.company.entity.DataTableEntity;
-import org.hibernate.annotations.ColumnTransformer;
 import org.springframework.stereotype.Component;
 
 @Component

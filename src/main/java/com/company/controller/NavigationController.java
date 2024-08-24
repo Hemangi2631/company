@@ -7,14 +7,17 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.data.jpa.datatables.mapping.DataTablesInput;
 import org.springframework.data.jpa.datatables.mapping.DataTablesOutput;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Log4j2
 @Controller
 @RequiredArgsConstructor
 public class NavigationController {
 
-private final DataTableService dataTableService;
+    private final DataTableService dataTableService;
 
     @GetMapping("/")
     public String dashboard() {

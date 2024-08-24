@@ -8,8 +8,8 @@ public class EmployeeDTO {
     private Integer salary;
     private String departmentId;
 
-    // Constructors
-    public EmployeeDTO() {}
+    public EmployeeDTO() {
+    }
 
     public EmployeeDTO(String id, String name, String email, String position, Integer salary, String departmentId) {
         this.id = id;
@@ -20,7 +20,6 @@ public class EmployeeDTO {
         this.departmentId = departmentId;
     }
 
-    // Getters and Setters
     public String getId() {
         return id;
     }

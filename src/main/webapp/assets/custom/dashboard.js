@@ -16,7 +16,6 @@ $.fn.serializeObject = function() {
     return o;
 };
 
-
 $(document).ready(function () {
     bindList();
     $("#dashboard_list_filter").addClass("dt-mb-1");
@@ -99,7 +98,6 @@ function deleteEmployee(id) {
     });
 }
 
-// Handle form submission for editing
 $('#editForm').on('submit', function (event) {
     event.preventDefault();
     var formData = $(this).serializeObject();

@@ -17,7 +17,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableJpaRepositories(repositoryBaseClass = DataTablesRepositoryImpl.class, repositoryFactoryBeanClass = DataTablesRepositoryFactoryBean.class)
 public class CompanyApplication {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         try {
             SpringApplication springApplication = new SpringApplication(CompanyApplication.class);

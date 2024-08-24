@@ -14,7 +14,7 @@
                         <h5 class="title">Employee Details</h5>
                         <hr>
                         <div class="table_info prod_list_table">
-                            <table class="table table-bordered w-100 mt-1" id="dashboard_list">
+                            <table class="tabFle table-bordered w-100 mt-1" id="dashboard_list">
                                 <thead>
                                 <tr>
                                     <th>Employee ID</th>

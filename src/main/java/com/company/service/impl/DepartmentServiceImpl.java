@@ -1,7 +1,6 @@
 package com.company.service.impl;
 
 import com.company.dto.DepartmentDTO;
-import com.company.entity.DepartmentEntity;
 import com.company.repository.DepartmentEntityRepository;
 import com.company.service.DepartmentService;
 import com.company.transformer.DepartmentTransformer;

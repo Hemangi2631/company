@@ -7,7 +7,6 @@
               leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20"
               uuid="1a347f55-02f7-4c8a-b4b9-4b2b7b72a2f8">
 
-    <!-- Query for fetching data -->
     <queryString>
         <![CDATA[
             SELECT e.department_id, e.id, e.name, e.email, e.position, e.salary
@@ -17,7 +16,6 @@
         ]]>
     </queryString>
 
-    <!-- Fields mapping with your query result -->
     <field name="departmentId" class="java.lang.String"/>
     <field name="id" class="java.lang.String"/>
     <field name="name" class="java.lang.String"/>
@@ -25,7 +23,6 @@
     <field name="position" class="java.lang.String"/>
     <field name="salary" class="java.lang.String"/>
 
-    <!-- Department group definition -->
     <group name="departmentGroup" isStartNewPage="true">
         <groupExpression><![CDATA[$F{departmentId}]]></groupExpression>
         <groupHeader>
@@ -44,7 +41,6 @@
         </groupFooter>
     </group>
 
-    <!-- Title band -->
     <title>
         <band height="50">
             <staticText>
@@ -57,7 +53,6 @@
         </band>
     </title>
 
-    <!-- Page Header -->
     <pageHeader>
         <band height="20">
             <line>
@@ -66,7 +61,6 @@
         </band>
     </pageHeader>
 
-    <!-- Column Header -->
     <columnHeader>
         <band height="20">
             <textField>
@@ -107,7 +101,6 @@
         </band>
     </columnHeader>
 
-    <!-- Detail band -->
     <detail>
         <band height="20">
             <textField>
@@ -133,7 +126,6 @@
         </band>
     </detail>
 
-    <!-- Page Footer -->
     <pageFooter>
         <band height="20">
             <staticText>
@@ -148,7 +140,6 @@
         </band>
     </pageFooter>
 
-    <!-- Summary band -->
     <summary>
         <band height="50">
             <textField>

@@ -6,7 +6,6 @@ import org.springframework.data.jpa.datatables.mapping.DataTablesOutput;
 
 public interface DataTableService {
 
-	DataTablesOutput<DataTableDTO> getAllDataTableEntity(DataTablesInput input);
-//	DataTablesOutput<DataTableDTO> dataTable(DataTablesInput dataTablesInput);
+    DataTablesOutput<DataTableDTO> getAllDataTableEntity(DataTablesInput input);
 
 }

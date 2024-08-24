@@ -8,7 +8,6 @@ public class EmployeeReportDTO {
     private String employeePosition;
     private Double employeeSalary;
 
-    // Constructor
     public EmployeeReportDTO(String departmentName, String employeeId, String employeeName,
                              String employeeEmail, String employeePosition, Double employeeSalary) {
         this.departmentName = departmentName;
@@ -19,7 +18,6 @@ public class EmployeeReportDTO {
         this.employeeSalary = employeeSalary;
     }
 
-    // Getters and Setters
     public String getDepartmentName() {
         return departmentName;
     }

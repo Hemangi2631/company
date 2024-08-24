@@ -1,6 +1,5 @@
 package com.company.repository;
 
-import com.company.entity.DepartmentEntity;
 import com.company.entity.EmployeeEntity;
 import org.springframework.data.jpa.datatables.repository.DataTablesRepository;
 import org.springframework.data.jpa.repository.JpaRepository;
