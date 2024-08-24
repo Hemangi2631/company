@@ -1,5 +1,6 @@
 package com.company.service;
 
+import com.company.dto.EmployeeDTO;
 import com.company.entity.EmployeeEntity;
 import org.springframework.data.jpa.datatables.mapping.DataTablesInput;
 import org.springframework.data.jpa.datatables.mapping.DataTablesOutput;
@@ -8,13 +9,13 @@ import java.util.List;
 
 public interface EmployeeService {
 
-	List<EmployeeEntity> getAllEmployee();
+	List<EmployeeDTO> getAllEmployee();
 
-	List<EmployeeEntity> findByDepartmentId(String departmentId);
+	List<EmployeeDTO> findByDepartmentId(String departmentId);
 
-	EmployeeEntity createEmployee(EmployeeEntity employeeEntity);
+	EmployeeDTO createEmployee(EmployeeDTO employeeDTO);
 
 	void deleteEmployeeByDepartment(String departmentId, String employedId);
 
-	DataTablesOutput<EmployeeEntity> dataTable(DataTablesInput dataTablesInput);
+	void deleteEmployeeByDepartment(String employedId);
 }

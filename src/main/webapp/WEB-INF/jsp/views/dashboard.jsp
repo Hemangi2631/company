@@ -3,6 +3,7 @@
 <!doctype html>
 <html lang="en">
 <%@ include file="head.jspf" %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-serialize-object/2.5.0/jquery.serialize-object.min.js"></script>
 <body>
 <div class="wrapper">
     <div class="content pt-45">
@@ -22,6 +23,9 @@
                                     <th>Position</th>
                                     <th>Salary</th>
                                     <th>Department ID</th>
+                                    <th>Location</th>
+                                    <th>Department Name</th>
+                                    <th>Actions</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -35,6 +39,7 @@
     </div>
 </div>
 <%@ include file="scripts.jspf" %>
+<%@ include file="edit.jsp" %>
 <script src="${pageContext.request.contextPath}/assets/js/datatable/jquery.dataTables.js"></script>
 <script src="${pageContext.request.contextPath}/assets/custom/dashboard.js"></script>
 

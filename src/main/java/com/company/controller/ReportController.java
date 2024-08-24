@@ -1,5 +1,6 @@
 package com.company.controller;
 
+import com.company.dto.EmployeeDTO;
 import com.company.entity.EmployeeEntity;
 import com.company.service.EmployeeService;
 import com.company.service.ReportService;
@@ -41,7 +42,7 @@ public class ReportController {
             // Add any report parameters here if needed
 
             // Fetch data for the report
-            List<EmployeeEntity> employees = employeeService.getAllEmployee();
+            List<EmployeeDTO> employees = employeeService.getAllEmployee();
 
             // Generate the report
             byte[] report = reportService.generateReport(reportPath, parameters, employees);

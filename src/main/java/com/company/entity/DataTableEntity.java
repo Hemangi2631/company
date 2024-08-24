@@ -2,15 +2,14 @@ package com.company.entity;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
-@Entity(name = "employee")
-public class EmployeeEntity {
+@Entity(name = "reportdata")
+public class DataTableEntity {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     @Column(name = "name")
@@ -27,4 +26,10 @@ public class EmployeeEntity {
 
     @Column(name = "department_id")
     private String departmentId;
+
+    @Column(name = "location")
+    private String location;
+
+    @Column(name = "department_name")
+    private String departmentName;
 }

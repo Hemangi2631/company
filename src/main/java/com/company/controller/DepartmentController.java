@@ -1,5 +1,6 @@
 package com.company.controller;
 
+import com.company.dto.DepartmentDTO;
 import com.company.entity.DepartmentEntity;
 import com.company.service.DepartmentService;
 import lombok.RequiredArgsConstructor;
@@ -18,13 +19,8 @@ public class DepartmentController {
     private final DepartmentService departmentService;
 
     @GetMapping("/")
-    public List<DepartmentEntity> getAllDepartments() {
+    public List<DepartmentDTO> getAllDepartments() {
         log.debug("Inside getAllDepartments");
         return departmentService.getAllDepartments();
     }
-
-//    @GetMapping("/{id}")
-//    public Optional<Department> getDepartmentById(@PathVariable Long id) {
-//        return departmentService.getDepartmentById(id);
-//    }
 }

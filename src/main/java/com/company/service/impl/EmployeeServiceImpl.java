@@ -1,15 +1,18 @@
 package com.company.service.impl;
 
+import com.company.dto.EmployeeDTO;
 import com.company.entity.EmployeeEntity;
 import com.company.repository.EmployeeEntityRepository;
 import com.company.service.EmployeeService;
+import com.company.transformer.EmployeeTransformer;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.data.jpa.datatables.mapping.DataTablesInput;
-import org.springframework.data.jpa.datatables.mapping.DataTablesOutput;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Log4j2
 @Service
@@ -17,20 +20,30 @@ import java.util.List;
 public class EmployeeServiceImpl implements EmployeeService {
 
     private final EmployeeEntityRepository repository;
+    private final EmployeeTransformer transformer;
 
     @Override
-    public List<EmployeeEntity> getAllEmployee() {
-        return repository.findAll();
+    public List<EmployeeDTO> getAllEmployee() {
+        return repository.findAll()
+                .stream()
+                .map(transformer::toDTO)
+                .collect(Collectors.toList());
     }
 
     @Override
-    public List<EmployeeEntity> findByDepartmentId(String departmentId) {
-        return repository.findByDepartmentId(departmentId);
+    public List<EmployeeDTO> findByDepartmentId(String departmentId) {
+        return repository.findByDepartmentId(departmentId)
+                .stream()
+                .map(employeeEntity -> transformer.toDTO(employeeEntity))
+                .collect(Collectors.toList());
     }
 
     @Override
-    public EmployeeEntity createEmployee(EmployeeEntity employeeEntity) {
-        return repository.save(employeeEntity);
+    @Transactional
+    public EmployeeDTO createEmployee(EmployeeDTO employeeDTO) {
+        EmployeeEntity entity = transformer.toEntity(employeeDTO);
+        EmployeeEntity save = repository.save(entity);
+        return transformer.toDTO(save);
     }
 
     @Override
@@ -39,7 +52,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public DataTablesOutput<EmployeeEntity> dataTable(DataTablesInput dataTablesInput) {
-        return repository.findAll(dataTablesInput);
+    public void deleteEmployeeByDepartment(String employedId) {
+        repository.deleteAllById(Collections.singleton(employedId));
     }
 }
