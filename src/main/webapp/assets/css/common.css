@@ -1,0 +1,27 @@
+.h-3 {
+    height: 3rem !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.dt-mb-1 {
+    margin-bottom: 0.75em !important;
+}
+
+.dt-mt-1 {
+    margin-top: 0.75em !important;
+}
+
+.arrow-drp-dwn{
+    -webkit-appearance: listbox !important;
+}
+
+.dataTables_empty{
+    text-align: center !important;
+}

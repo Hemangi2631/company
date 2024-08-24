@@ -1,0 +1,5 @@
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+    <h5 class="title" id="reportTitle"></h5>
+    <div class="table_info prod_list_table report_table" id="">
+    </div>
+</div>
