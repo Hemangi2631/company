@@ -19,7 +19,7 @@ function bindList() {
         },
         columns: [
             {"data": "id"},
-            {"data": "name"}
+            {"data": "name"},
             {"data": "name"}
         ],
         ajax:

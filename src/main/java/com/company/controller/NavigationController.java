@@ -20,7 +20,7 @@ public class NavigationController {
 
 private final EmployeeService employeeService;
 
-    @GetMapping("/dashboard")
+    @GetMapping("/")
     public String dashboard() {
         log.debug("Inside dashboard");
         return "views/dashboard";

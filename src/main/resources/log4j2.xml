@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="DEBUG">
+<Configuration status="ERROR">
     <Properties>
         <Property name="log-path">/opt/company/logs</Property>
     </Properties>
@@ -20,14 +20,8 @@
     </Appenders>
 
     <Loggers>
-<!--        <logger name="org.hibernate" level="ERROR" />-->
         <logger name="com.company" level="debug" />
-<!--        <logger name="org.springframework" level="error"/>-->
-<!--        <logger name="org.hibernate" level="error" />-->
-<!--        <logger name="org.apache" level="error"/>-->
-<!--        <logger name="com.zaxxer" level="error" />-->
-<!--        <logger name="_org.springframework" level="error" />-->
-        <Root level="debug">
+        <Root level="error">
             <AppenderRef ref="tasks" level="debug"/>
             <AppenderRef ref="Console" level="debug"/>
         </Root>
